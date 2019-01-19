@@ -21,6 +21,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		// TODO Auto-generated method stub
+		registry.addViewController("/cesium2").setViewName("cesium_map2");
 		WebMvcConfigurer.super.addViewControllers(registry);
 	}
 
