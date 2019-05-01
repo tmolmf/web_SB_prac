@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ttm.sample.web.dbaction.Main_Mapper">
+
+    <select id="selectObjectById" resultType="hashmap">
+        SELECT ID
+              ,NAME
+              ,COMMENT
+          FROM sample
+         WHERE ID = #{id}
+    </select>
+
+		<select id="selectObjects" resultType="hashmap">
+        SELECT ID
+              ,NAME
+              ,COMMENT
+          FROM sample
+    </select>
+
+    <select id="selectAllCity" resultType="hashmap">
+        SELECT ID
+              ,NAME
+              ,COUNTRY
+              ,POPULATION
+          FROM CITY
+    </select>
+
+    <insert id="insertCity">
+      INSERT INTO CITY (NAME, COUNTRY, POPULATION)
+      VALUES (#{name}, #{country}, #{population})
+    </insert>
+
+</mapper>
